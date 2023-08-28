@@ -5,9 +5,8 @@ import br.edu.ifpb.progdist.lab2_apirest.model.Usuario;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
-public class UsuarioService {
+public class UsuariosService {
     private UsuariosDAO usuariosDAO = new UsuariosDAO();
 
     public List<Usuario> getUsuarios() {
@@ -22,9 +21,9 @@ public class UsuarioService {
 
         if(optUsuario.isPresent()) {
             usuarioPesquisado = optUsuario.get();
-            System.out.println("Usuário(a) "+usuarioPesquisado.getNome()+ "encontrado(a) com sucesso!");
+            System.out.println("Usuário(a) " +usuarioPesquisado.getNome()+ " encontrado(a) com sucesso!");
         } else {
-            System.out.println("Usuário(a) código "+codigo+ "não está cadastrado(a) no sistema!");
+            System.out.println("Usuário(a) com o código " +codigo+ " não está cadastrado(a) no sistema!");
         }
         return usuarioPesquisado;
     }
